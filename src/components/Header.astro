@@ -1,0 +1,48 @@
+---
+const navigation = [
+  { name: 'Features', href: '/features' },
+  { name: 'Use Cases', href: '/use-cases' },
+  { name: 'Pricing', href: '/pricing' },
+  { name: 'About', href: '/about' },
+];
+---
+
+<header class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+  <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <div class="flex items-center">
+        <a href="/" class="text-2xl font-bold text-primary">
+          Briefr
+        </a>
+      </div>
+      
+      <div class="hidden md:block">
+        <div class="flex items-center space-x-4">
+          {navigation.map((item) => (
+            <a
+              href={item.href}
+              class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary"
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <a
+          href="https://app.briefr.com/login"
+          class="text-sm font-medium text-gray-700 hover:text-primary"
+        >
+          Log in
+        </a>
+        <a
+          href="https://app.briefr.com/signup"
+          class="rounded-full bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary/90"
+        >
+          Get Started
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>

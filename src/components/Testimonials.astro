@@ -1,0 +1,61 @@
+---
+import { testimonials } from '../data/testimonials';
+import TestimonialCard from './testimonials/TestimonialCard.astro';
+
+interface Testimonial {
+  quote: string;
+  author: string;
+  role: string;
+  company: string;
+  image: string;
+}
+---
+
+<section class="py-24 relative overflow-hidden">
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute inset-0 bg-gradient-to-b from-gray-50 to-white"></div>
+  </div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+        Trusted by marketing teams worldwide
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        See what our customers have to say about how Briefr has transformed their marketing processes.
+      </p>
+    </div>
+    
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {testimonials.map((testimonial: Testimonial) => (
+        <TestimonialCard {...testimonial} />
+      ))}
+    </div>
+
+    <div class="mt-16 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-8 rounded-2xl">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        <img
+          src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=400&q=80"
+          alt="Team collaboration"
+          class="rounded-xl shadow-lg w-full md:w-64 object-cover"
+        />
+        <div class="flex-1">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <p class="text-4xl font-bold text-primary">1000+</p>
+              <p class="text-gray-600 mt-2">Teams</p>
+            </div>
+            <div>
+              <p class="text-4xl font-bold text-primary">50k+</p>
+              <p class="text-gray-600 mt-2">Briefs Created</p>
+            </div>
+            <div>
+              <p class="text-4xl font-bold text-primary">98%</p>
+              <p class="text-gray-600 mt-2">Satisfaction</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

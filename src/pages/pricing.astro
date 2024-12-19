@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PricingHero from '../components/pricing/PricingHero.astro';
+import PricingTables from '../components/pricing/PricingTables.astro';
+import PricingFAQ from '../components/pricing/PricingFAQ.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<Layout 
+  title="Pricing" 
+  description="Simple, transparent pricing for teams of all sizes. Start free and scale as you grow."
+>
+  <main>
+    <PricingHero />
+    <PricingTables />
+    <PricingFAQ />
+    <CTA />
+  </main>
+</Layout>

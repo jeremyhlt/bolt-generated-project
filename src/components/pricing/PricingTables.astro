@@ -1,0 +1,38 @@
+---
+import { pricingPlans } from '../../data/pricing';
+---
+
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-8">
+      {pricingPlans.map((plan) => (
+        <div class={`rounded-2xl p-8 ${plan.featured ? 'bg-primary text-white ring-4 ring-primary/30' : 'bg-white text-gray-900 border border-gray-200'}`}>
+          <h3 class="text-2xl font-bold">{plan.name}</h3>
+          <div class="mt-4">
+            <span class="text-4xl font-bold">${plan.price}</span>
+            <span class="text-lg">/month</span>
+          </div>
+          <p class="mt-4 text-sm opacity-90">{plan.description}</p>
+          <ul class="mt-8 space-y-4">
+            {plan.features.map((feature) => (
+              <li class="flex items-center gap-3">
+                <span>✓</span>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+          <a
+            href={plan.href}
+            class={`mt-8 block w-full py-3 px-6 text-center rounded-full font-medium ${
+              plan.featured
+                ? 'bg-white text-primary hover:bg-gray-50'
+                : 'bg-primary text-white hover:bg-primary/90'
+            }`}
+          >
+            {plan.buttonText}
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

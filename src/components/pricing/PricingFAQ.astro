@@ -1,0 +1,42 @@
+---
+const faqs = [
+  {
+    question: "How does the free trial work?",
+    answer: "You can try Briefr Professional free for 14 days. No credit card required. You'll get full access to all features during the trial period."
+  },
+  {
+    question: "Can I change plans anytime?",
+    answer: "Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate your billing."
+  },
+  {
+    question: "What payment methods do you accept?",
+    answer: "We accept all major credit cards (Visa, Mastercard, American Express) and offer invoice payment for annual enterprise plans."
+  },
+  {
+    question: "Is there a long-term contract?",
+    answer: "No, all our plans are month-to-month. Enterprise customers can opt for annual billing with additional benefits."
+  },
+  {
+    question: "What happens after my trial ends?",
+    answer: "After your trial ends, you can choose to subscribe to any of our plans or continue with the free Starter plan with limited features."
+  }
+];
+---
+
+<section class="py-24">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+      <p class="mt-4 text-lg text-gray-600">Everything you need to know about Briefr pricing and plans</p>
+    </div>
+
+    <div class="space-y-8">
+      {faqs.map((faq) => (
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
+          <p class="text-gray-600">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
